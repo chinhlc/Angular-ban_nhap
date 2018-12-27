@@ -6,6 +6,10 @@ const PAGE_ROUTES: Routes = [
     path: 'store',
     loadChildren: '../produce/product.module#ProductModule',
     data: {preload: true}
+  }, {
+    path: 'insights',
+    loadChildren: '../article/blog.module#BlogModule',
+    data: {preload: true}
   }
 ];
 
