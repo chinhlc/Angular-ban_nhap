@@ -9,6 +9,7 @@ import {SelectivePreloadingStrategy} from './services/preloading-router';
 
 import {APP_PAGES} from './pages';
 import { XrouterModule } from './pages/xrouter/xrouter.module';
+import { WrapRouterModule } from './wrouter/wrap-router.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { XrouterModule } from './pages/xrouter/xrouter.module';
     BrowserModule,
     RouterModule.forRoot(ROUTES,{preloadingStrategy: SelectivePreloadingStrategy}),
     XrouterModule,
+    WrapRouterModule,
   ],
   providers: [
     SelectivePreloadingStrategy,
