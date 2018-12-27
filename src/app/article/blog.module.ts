@@ -22,7 +22,7 @@ const BLOG_ROUTES: Routes = [
         component: BlogCreateComponent
       },
       {
-        path: 'detail',
+        path: 'detail/:id',
         component: BlogDetailComponent
       }
     ]
