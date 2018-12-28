@@ -7,6 +7,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Chúng ta có thể nhanh chóng tạo nên một bộ khung Angular sẵn sàng cho việc code:
 `ng new angular-cli`
 
+Để project tự open trên trình duyệt thì cần sửa trong package.js `"start": "ng serve  --open"`
+
 ### Tạo Module và component cho module đó
 ##### Tạo Module
 Việc tổ chức theo module rất quan trọng. Vì thế chúng ta sẽ luôn khởi tạo module đầu tiên trước khi khởi tạo bất cứ component, directive, pipe, ...
@@ -137,6 +139,22 @@ Ngoài ra chúng ta sẽ cần thêm `router-outlet cho app.component.html` đ�
 `
 
 Lúc này bạn có thể khởi chạy ứng dụng bằng câu lệnh `ng serve --open`
+
+## Remove # (hash) from url build
+
+Có `RouterModule.forChild(...)` thì sẽ xuất hiện lỗi `404 Page Not found` sau khi build. Cách khắc phục. Tạo file `.htaccess` với nội dung:
+
+```
+RewriteEngine on
+
+# Don't rewrite files or directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]  
+RewriteCond %{REQUEST_FILENAME} -d  
+RewriteRule ^ - [L]
+
+# Rewrite everything else to index.html to allow html5 state links
+RewriteRule ^ index.html [L]
+```
 
 ## Development server
 
