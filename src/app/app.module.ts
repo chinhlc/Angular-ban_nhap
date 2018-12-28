@@ -6,9 +6,7 @@ import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
 
 import {SelectivePreloadingStrategy} from './services/preloading-router';
-
-import {LocalStorageService, SessionStorageService} from "ngx-webstorage";
-import {AppStorage} from './services/global/storage';
+import {APP_PROVIDERS} from './services';
 
 import {APP_PAGES} from './pages';
 import { XrouterModule } from './pages/xrouter/xrouter.module';
@@ -28,8 +26,7 @@ import { WrapRouterRoutingModule } from './wrouter/wrap-router-routing.module';
   ],
   providers: [
     SelectivePreloadingStrategy,
-    LocalStorageService, SessionStorageService,
-    AppStorage
+    ...APP_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })
