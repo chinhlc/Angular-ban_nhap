@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
+import {AuthGuard} from '../vguard/auth.guard';
+
 import { BlogComponent } from './blog.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
@@ -23,7 +25,8 @@ const BLOG_ROUTES: Routes = [
       },
       {
         path: 'detail/:id',
-        component: BlogDetailComponent
+        component: BlogDetailComponent,
+        canActivate: [AuthGuard],
       }
     ]
   },
