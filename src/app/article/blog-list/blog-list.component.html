@@ -1,3 +1,12 @@
 <p>
   blog-list works!
 </p>
+
+
+<ul>
+  <li *ngFor="let item of blogList">
+    <a [routerLink]="['/insights/detail', item.id]">
+      {{item.name}} - {{item.view}}
+    </a>
+  </li>
+</ul>
