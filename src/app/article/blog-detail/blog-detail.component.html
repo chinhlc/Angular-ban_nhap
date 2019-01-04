@@ -1,3 +1,16 @@
-<p>
-  blog-detail {{id}} works!
-</p>
+<!--<p>-->
+  <!--blog-detail {{id}} works!-->
+<!--</p>-->
+
+<div *ngIf="BlogItem">
+  <h2>{{BlogItem.name}}</h2>
+  <div style="text-align: center">
+    <img [src]="BlogItem.imageUrl" [alt]="BlogItem.name" style="max-width: 100%">
+  </div>
+  <p>
+    View Count: {{BlogItem.view}}
+  </p>
+  <p>
+    <a [routerLink]="['/detail', BlogItem.id, 'edit']">Edit</a>
+  </p>
+</div>
