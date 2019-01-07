@@ -9,11 +9,15 @@ export class BlogCreateComponent implements OnInit {
 
   txtName: string = "";
   txtMess: string = "";
+  isSave = false;
 
   constructor() { }
+  ngOnInit() { }
 
   FormCheckVal(): boolean {
-    if (this.txtName.length > 0 || this.txtMess.length >0)
+    if (this.isSave)
+      return true;
+    else if (this.txtName.length > 0 || this.txtMess.length >0)
       return false;
     return true;
   }

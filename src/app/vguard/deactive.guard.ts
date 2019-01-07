@@ -12,12 +12,7 @@ export class DeactiveGuard implements CanDeactivate<BlogCreateComponent> {
     console.log("have Deactivate");
   }
 
-  canDeactivate(
-    component: BlogCreateComponent,
-    currentRoute: ActivatedRouteSnapshot,
-    currentState: RouterStateSnapshot,
-    nextState?: RouterStateSnapshot
-  ): Observable<boolean> | Promise<boolean> | boolean {
+  canDeactivate(component: BlogCreateComponent) {
     if(!component.FormCheckVal()){
       return window.confirm('Do you really want to cancel?');
     }
