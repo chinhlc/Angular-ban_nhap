@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import {AuthGuard} from '../vguard/auth.guard';
+import {DeactiveGuard} from '../vguard/deactive.guard';
 
 import { BlogComponent } from './blog.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
@@ -21,7 +22,8 @@ const BLOG_ROUTES: Routes = [
       },
       {
         path: 'create',
-        component: BlogCreateComponent
+        component: BlogCreateComponent,
+        canDeactivate: [DeactiveGuard],
       },
       {
         path: 'detail/:id',

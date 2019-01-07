@@ -11,5 +11,18 @@
   <button (click)="tooglelogin()">{{isHighlight ? 'Have Login' : 'Have Logout'}}</button>
 </div>
 
+<ul>
+  <li><a routerLink="/home">Home</a></li>
+  <li><a routerLink="/register">Register</a></li>
+  <li><a routerLink="/login">Login</a></li>
+  <li><a routerLink="/insights">Blog</a></li>
+  <li><a routerLink="/insights/create">Blog Create</a></li>
+  <li><a routerLink="/insights/list">Blog List</a></li>
+  <li><a routerLink="/store">Product</a></li>
+  <li><a routerLink="/store/list">Product list</a></li>
+</ul>
+
+<hr/>
+
 <router-outlet></router-outlet>
 

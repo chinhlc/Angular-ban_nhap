@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogCreateComponent implements OnInit {
 
+  txtName: string = "";
+  txtMess: string = "";
+
   constructor() { }
 
-  ngOnInit() {
+  FormCheckVal(): boolean {
+    if (this.txtName.length > 0 || this.txtMess.length >0)
+      return false;
+    return true;
   }
 
 }
