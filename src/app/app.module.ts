@@ -7,6 +7,7 @@ import { ROUTES } from './app.routes';
 
 import {SelectivePreloadingStrategy} from './services/preloading-router';
 import {APP_PROVIDERS} from './services';
+import {SharedModule} from './share-module/dependency-injection/shared.module';
 
 import {APP_PAGES} from './pages';
 import { XrouterModule } from './pages/xrouter/xrouter.module';
@@ -23,6 +24,7 @@ import { WrapRouterRoutingModule } from './wrouter/wrap-router-routing.module';
     RouterModule.forRoot(ROUTES,{preloadingStrategy: SelectivePreloadingStrategy}),
     XrouterModule,
     WrapRouterRoutingModule,
+    SharedModule.forRoot(),
   ],
   providers: [
     SelectivePreloadingStrategy,
