@@ -5,3 +5,107 @@ body{
     color: orange;
   }
 }
+
+
+
+.form-control{
+  height: 40px;
+  border: none;
+  //@include box-shadow(none);
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+  &.border-bottom{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &[disabled] {
+    -webkit-text-fill-color: #eee;  //$gray-nomal
+    -webkit-opacity:1;
+  }
+}
+// Checkbox Style
+// <div class="checkbox-style"><input type="checkbox" id="checkbox-report"><label for="checkbox-report"></label></div>
+.checkbox-style{
+  display: inline-block;
+  vertical-align: middle;
+  input[type="checkbox"] {
+    display: none;
+  }
+  label {
+    margin-right: 5px;
+    line-height: 1;
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    display: block;
+    border: 1px solid #eee;   //$gray-four
+    //@include border-radius(3px);
+    background-color: #fff;   //$white
+    text-align: center;
+  }
+  input[type=checkbox]:checked+label:before {
+    content: "\ea10";
+    font-family: icomoon;
+    color: #008b8b;           //$green-one
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.checkbox-tyle{
+  margin-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 25px;
+  position: relative;
+  .checkbox-style{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .text-label{
+    font-weight: normal;
+    color: #008b8b;           //$green-one
+    margin-bottom: 0;
+    margin-left: 5px;
+  }
+}
+
+// Radio Style
+// <div class="radio-style"><input type="radio" name="gender" value="male"><span></span></div>
+.radio-style{
+  display: inline-block;
+  vertical-align: middle;
+  input[type="radio"] {
+    display: none;
+  }
+  span {
+    margin-right: 5px;
+    height: 20px;
+    width: 20px;
+    line-height: 1;
+    padding: 4px;
+    border: 1px solid #eee;   //$gray-four
+    //@include border-radius(50%);
+    background-color: #008b8b;           //$green-one
+    text-align: center;
+    display: block;
+  }
+  input[type=radio]:checked+span:before {
+    content: "";
+    background: #008b8b;           //$green-one
+    display: block;
+    height: 100%;
+    width: 100%;
+    //@include border-radius(50%);
+  }
+}
+.radio-type {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  label {
+    font-weight: normal;
+    color: #eee;      //$gray-three
+    margin-bottom: 0;
+  }
+}
