@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {FormValidationService} from '../form-validation';
+import {FormMessService} from '../notify-mess';
 
 @Component({
   selector: 'app-elform',
@@ -29,7 +30,9 @@ export class ElementInputComponent implements OnInit, OnDestroy {
     mess: ''
   };
 
-  constructor(protected formValidate: FormValidationService) {}
+  constructor(
+    protected formValidate: FormValidationService,
+    public messInfo: FormMessService) {}
 
   ngOnInit() {
     this._validateSubscription = this.formValidate
@@ -47,15 +50,19 @@ export class ElementInputComponent implements OnInit, OnDestroy {
   }
 
   protected _validateElement(needValid): boolean {
-    if (!needValid || !this.validation) {
-      this._validProperty = {
-        isValid: true,
-        mess: ''
-      };
-      return true;
+    if (this.typeElem === 'confirm_password' && needValid) {
+      return this.validateConfirmPassword(this.modelValue, true);
     } else {
-      this._validProperty = <any>this.formValidate.validate(this.validation, this.modelValue);
-      return this._validProperty.isValid;
+      if (!needValid || !this.validation) {
+        this._validProperty = {
+          isValid: true,
+          mess: ''
+        };
+        return true;
+      } else {
+        this._validProperty = <any>this.formValidate.validate(this.validation, this.modelValue);
+        return this._validProperty.isValid;
+      }
     }
   }
 
@@ -78,5 +85,30 @@ export class ElementInputComponent implements OnInit, OnDestroy {
   }
   get model() {
     return this.modelValue;
+  }
+
+  // Check Confirm Password
+  validateConfirmPassword(value, onSubmit = false) {
+    if (value) {
+      const mess = 'Your password and confirmation password do not match.';
+      if (this.match_value !== value) {
+        this._validProperty = {
+          isValid: false,
+          mess: <any>this.messInfo.MessValidate(mess)
+        };
+        return this._validProperty.isValid;
+      }
+      return this._validProperty.isValid;
+    } else {
+      if (onSubmit) {
+        const mess = 'This is required field';
+        this._validProperty = {
+          isValid: false,
+          mess: <any>this.messInfo.MessValidate(mess)
+        };
+        return this._validProperty.isValid;
+      }
+      return this._validProperty.isValid;
+    }
   }
 }

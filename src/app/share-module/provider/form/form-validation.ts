@@ -5,7 +5,7 @@ import {filter} from 'rxjs/internal/operators';
 
 import * as _ from 'lodash';
 
-// import {FormMessService} from './notify-mess';
+import {FormMessService} from './notify-mess';
 // import {ToastNotify} from './notify-toast';
 
 @Injectable()
@@ -23,33 +23,35 @@ export class FormValidationService {
     [propName: string]: boolean;
   } = {};
 
-  protected validations = [{
+  protected validations = [
+    {
       id: 'require',
-      mess: 'This is require field'
+      mess: this.messInfo.MessValidate('This is required field')
     },
     {
       id: 'email',
-      mess: 'Email invalid'
+      mess: this.messInfo.MessValidate('Please enter a valid email address')
     },
     {
       id: 'p-number',
-      mess: 'This is positive number field'
+      mess: this.messInfo.MessValidate('This is positive number field')
     },
     {
       id: 'i-number',
-      mess: 'This is number field'
+      mess: this.messInfo.MessValidate('This is number field')
     },
     {
       id: 'is-number',
-      mess: 'This is number field'
+      mess: this.messInfo.MessValidate('This is number field')
     },
     {
       id: 'p-not-decimal-num',
-      mess: 'This is integer number field'
-    }];
+      mess: this.messInfo.MessValidate('This is integer number field')
+    }
+  ];
 
   constructor(
-    // public messInfo: FormMessService,
+    public messInfo: FormMessService,
     // public toasInfo: ToastNotify
   ) {}
 

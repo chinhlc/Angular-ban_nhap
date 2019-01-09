@@ -4,13 +4,17 @@ import {CommonModule} from '@angular/common';   // Add ngClass, ngFor... for Chi
 import {ElementInputComponent} from './form/component/element-input.component';
 
 import {FormValidationService} from './form/form-validation';
+
+import {TranslateModule} from '@ngx-translate/core';
 // import {FormMessService} from './form/notify-mess';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    TranslateModule.forChild(),
   ],
   exports: [
+    TranslateModule,
     ElementInputComponent,
   ],
   declarations: [
