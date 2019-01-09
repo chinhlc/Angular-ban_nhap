@@ -1,0 +1,34 @@
+<input *ngIf="typeElem == 'text'" type="text" [value]="model"
+       (change)="changeValue($event.target.value)" inputSelectText [disabled]="disabled"
+       [ngClass]="{'error-valid':!_validProperty['isValid']}" [ngStyle]="styleInput"
+       class="form-control border-bottom" [placeholder]="placeHolderText">
+
+<input *ngIf="typeElem == 'password'" type="password" [value]=""
+       (change)="changeValue($event.target.value)" inputSelectText [disabled]="disabled"
+       [ngClass]="{'error-valid':!_validProperty['isValid']}" [ngStyle]="styleInput"
+       class="form-control border-bottom" [placeholder]="placeHolderText">
+
+<input *ngIf="typeElem == 'confirm_password'" type="password" [value]=""
+       (change)="changeValue($event.target.value); validateConfirmPassword($event.target.value)" inputSelectText [disabled]="disabled"
+       [ngClass]="{'error-valid':!_validProperty['isValid']}" [ngStyle]="styleInput"
+       class="form-control border-bottom" [placeholder]="placeHolderText">
+
+<textarea *ngIf="typeElem == 'textarea'" [value]="model"
+          (change)="changeValue($event.target.value)" inputSelectText [disabled]="disabled"
+          [ngClass]="{'error-valid':!_validProperty['isValid']}"
+          class="form-control form-border"></textarea>
+
+<div class="checkbox-tyle" *ngIf="typeElem == 'checkbox'">
+  <div class="checkbox-style">
+    <input type="checkbox" id="checkbox-brand-name" [checked]="model" (change)="changeValueCheckbox($event.target.checked)"
+           [disabled]="disabled"
+           [ngClass]="{'error-valid':!_validProperty['isValid']}">
+    <label for="checkbox-brand-name"></label>
+  </div>
+  <label class="text-label" for="checkbox-brand-name">{{checkboxLabel}}</label>
+</div>
+
+<span [hidden]="_validProperty['isValid']"
+      [ngClass]="{'custom-amount-gc': customStyle == 'custom-amount', 'error-message': customStyle == '' || customStyle == 'custom-amount'}">
+        {{_validProperty['mess']}}
+</span>
