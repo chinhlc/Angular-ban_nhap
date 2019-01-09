@@ -10,6 +10,8 @@ import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
+import {ChildElementModule} from '../share-module/provider';
+
 
 const BLOG_ROUTES: Routes = [
   {
@@ -38,6 +40,7 @@ const BLOG_ROUTES: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(BLOG_ROUTES),
+    ChildElementModule,
   ],
   declarations: [BlogComponent, BlogCreateComponent, BlogListComponent, BlogDetailComponent]
 })

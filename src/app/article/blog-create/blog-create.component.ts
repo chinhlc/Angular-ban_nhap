@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {FormValidationService} from '../../share-module/provider/form/form-validation';
+
 @Component({
   selector: 'app-blog-create',
   templateUrl: './blog-create.component.html',
@@ -11,7 +13,7 @@ export class BlogCreateComponent implements OnInit {
   txtMess: string = "";
   isSave = false;
 
-  constructor() { }
+  constructor(protected formValidate: FormValidationService) { }
   ngOnInit() { }
 
   FormCheckVal(): boolean {
@@ -20,6 +22,13 @@ export class BlogCreateComponent implements OnInit {
     else if (this.txtName.length > 0 || this.txtMess.length >0)
       return false;
     return true;
+  }
+
+  submitForm(){
+    this.isSave = true;
+    this.formValidate.submit('change-password', () => {
+      console.log("have validate");
+    }, true);
   }
 
 }
