@@ -1,0 +1,12 @@
+{
+  "This is required field": "This is required field",
+  "Please enter a valid email address": "Please enter a valid email address",
+  "This is positive number field": "This is positive number field",
+  "This is number field": "This is number field",
+  "This is integer number field": "This is integer number field",
+  "Your password and confirmation password do not match.": "Your password and confirmation password do not match.",
+
+  "New Password": "New Password",
+  "Current Password": "Current Password",
+  "Confirm Password": "Confirm Password"
+}

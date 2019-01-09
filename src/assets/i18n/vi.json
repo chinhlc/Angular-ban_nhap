@@ -1,0 +1,12 @@
+{
+  "This is required field": "Bắt buộc",
+  "Please enter a valid email address": "Email không hợp lệ",
+  "This is positive number field": "Số không hợp lệ",
+  "This is number field": "Số không hợp lệ",
+  "This is integer number field": "Số không hợp lệ",
+  "Your password and confirmation password do not match.": "Mật khẩu xác nhận không chính xác",
+
+  "New Password": "Mật khẩu mới",
+  "Current Password": "Mật khẩu hiện tại",
+  "Confirm Password": "Xác nhận mật khẩu"
+}

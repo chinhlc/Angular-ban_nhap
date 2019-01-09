@@ -2,7 +2,7 @@
   blog-create works!
 </p>
 
-<app-elform [typeElem]="'password'" [placeHolderText]="'Current Password'"
+<app-elform [typeElem]="'password'" [placeHolderText]="'Current Password' | translate"
             [formKey]="'change-password'" [validation]="'required'"
             name="txtPass" ngModel></app-elform>
 <div>
