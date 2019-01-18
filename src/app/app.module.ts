@@ -17,6 +17,9 @@ import { WrapRouterRoutingModule } from './wrouter/wrap-router-routing.module';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {SHARE_PROVIDERS} from './share-module/provider/provider-service';
 
 
@@ -34,6 +37,12 @@ import {SHARE_PROVIDERS} from './share-module/provider/provider-service';
         useFactory: (retailTranslateLoader),
         deps: [HttpClient]
       }
+    }),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
     }),
     RouterModule.forRoot(ROUTES,{preloadingStrategy: SelectivePreloadingStrategy}),
     XrouterModule,

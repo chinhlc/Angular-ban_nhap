@@ -3,10 +3,11 @@ import {Subject, Subscription} from 'rxjs';
 import {share} from 'rxjs/operators';
 import {filter} from 'rxjs/internal/operators';
 
+import { ToastrService } from 'ngx-toastr';
+
 import * as _ from 'lodash';
 
 import {FormMessService} from './notify-mess';
-// import {ToastNotify} from './notify-toast';
 
 @Injectable()
 export class FormValidationService {
@@ -52,7 +53,7 @@ export class FormValidationService {
 
   constructor(
     public messInfo: FormMessService,
-    // public toasInfo: ToastNotify
+    private toasInfo: ToastrService,
   ) {}
 
   getValidationFormStream() {
@@ -74,11 +75,11 @@ export class FormValidationService {
                                           .pipe(filter(object => object['eventKey'] === eventKey))
                                           .subscribe((data) => {
                                             if (this._isValid[eventKey] && !(data.hasOwnProperty('cancel') && data['cancel'] === true)) {
+                                              this.toasInfo.success('Data shown successfully !!', 'Notification');
                                               callBack();
+                                            } else if (!this._isValid[eventKey]) {
+                                              this.toasInfo.warning('Form Invalid', 'Oops!');
                                             }
-                                            // else if (!this._isValid[eventKey]) {
-                                            //   this.toasInfo.warning('Form Invalid', 'Oops!');
-                                            // }
                                           });
     }
     this.getValidationFormStream().next({eventKey: eventKey, needValidate: true});

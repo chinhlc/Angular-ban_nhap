@@ -35,6 +35,7 @@ export class ElementInputComponent implements OnInit, OnDestroy {
     public messInfo: FormMessService) {}
 
   ngOnInit() {
+    console.log('1');
     this._validateSubscription = this.formValidate
       .onSubmitOrCancel(
         this.formKey,
@@ -50,6 +51,7 @@ export class ElementInputComponent implements OnInit, OnDestroy {
   }
 
   protected _validateElement(needValid): boolean {
+    console.log('3');
     if (this.typeElem === 'confirm_password' && needValid) {
       return this.validateConfirmPassword(this.modelValue, true);
     } else {
@@ -71,6 +73,7 @@ export class ElementInputComponent implements OnInit, OnDestroy {
   }
   changeValue(value) {
     // remove validate
+    console.log('2');
     this._validateElement(false);
     this.modelChange.emit(value);
   }
