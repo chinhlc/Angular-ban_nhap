@@ -3,7 +3,8 @@ import {Subject, Subscription} from 'rxjs';
 import {share} from 'rxjs/operators';
 import {filter} from 'rxjs/internal/operators';
 
-import { ToastrService } from 'ngx-toastr';
+import {NotificationService} from '../../toastr/notification.service';
+
 
 import * as _ from 'lodash';
 
@@ -53,7 +54,7 @@ export class FormValidationService {
 
   constructor(
     public messInfo: FormMessService,
-    private toasInfo: ToastrService,
+    private toasInfo: NotificationService,
   ) {}
 
   getValidationFormStream() {
