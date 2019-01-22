@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import {FormValidationService} from '../../share-module/provider/form/form-validation';
+
+import {AlertService} from '../../share-module/notification/alert.service';
+import {IToastMessage} from '../../share-module/notification/models/alert.interface';
+// import {AlertlayoutComponent} from '../../share-module/notification/alert-template/alertlayout.component';
 
 @Component({
   selector: 'app-blog-create',
@@ -9,11 +13,16 @@ import {FormValidationService} from '../../share-module/provider/form/form-valid
 })
 export class BlogCreateComponent implements OnInit {
 
+  // @ViewChild(AlertlayoutComponent)  myChild: AlertlayoutComponent;
+
   txtName: string = "";
   txtMess: string = "";
   isSave = false;
 
-  constructor(protected formValidate: FormValidationService) { }
+  constructor(
+    protected formValidate: FormValidationService,
+    private alertservice: AlertService,
+  ) { }
   ngOnInit() { }
 
   FormCheckVal(): boolean {
@@ -25,6 +34,8 @@ export class BlogCreateComponent implements OnInit {
   }
 
   submitForm(){
+    this.alertservice.success(IToastMessage.Success);
+
     this.isSave = true;
     this.formValidate.submit('change-password', () => {
       console.log("have validate");

@@ -1,0 +1,4 @@
+<div *ngFor="let alert of alerts" class="alert-message w5 relative z-999 ba bw1 b--moon-gray bg-blue tc br4">
+  <p class="f6">{{ alert.message }}</p>
+  <div *ngIf="alert" class="alert-x absolute pointer" (click)="removeAlerts(alert)" aria-label="close">X</div>
+</div>
