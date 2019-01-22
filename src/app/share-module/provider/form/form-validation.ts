@@ -3,7 +3,7 @@ import {Subject, Subscription} from 'rxjs';
 import {share} from 'rxjs/operators';
 import {filter} from 'rxjs/internal/operators';
 
-import {NotificationService} from '../../toastr/notification.service';
+// import {NotificationService} from '../../toastr/notification.service';
 
 
 import * as _ from 'lodash';
@@ -54,7 +54,7 @@ export class FormValidationService {
 
   constructor(
     public messInfo: FormMessService,
-    private toasInfo: NotificationService,
+    // private toasInfo: NotificationService,
   ) {}
 
   getValidationFormStream() {
@@ -76,10 +76,10 @@ export class FormValidationService {
                                           .pipe(filter(object => object['eventKey'] === eventKey))
                                           .subscribe((data) => {
                                             if (this._isValid[eventKey] && !(data.hasOwnProperty('cancel') && data['cancel'] === true)) {
-                                              this.toasInfo.success('Data shown successfully !!', 'Notification');
+                                              // this.toasInfo.success('Data shown successfully !!', 'Notification');
                                               callBack();
                                             } else if (!this._isValid[eventKey]) {
-                                              this.toasInfo.warning('Form Invalid', 'Oops!');
+                                              // this.toasInfo.warning('Form Invalid', 'Oops!');
                                             }
                                           });
     }

@@ -55,6 +55,7 @@ export class ElementInputComponent implements OnInit, OnDestroy {
     if (this.typeElem === 'confirm_password' && needValid) {
       return this.validateConfirmPassword(this.modelValue, true);
     } else {
+      console.log(needValid);
       if (!needValid || !this.validation) {
         this._validProperty = {
           isValid: true,
@@ -62,6 +63,7 @@ export class ElementInputComponent implements OnInit, OnDestroy {
         };
         return true;
       } else {
+        console.log(this.modelValue);
         this._validProperty = <any>this.formValidate.validate(this.validation, this.modelValue);
         return this._validProperty.isValid;
       }
@@ -75,6 +77,8 @@ export class ElementInputComponent implements OnInit, OnDestroy {
     // remove validate
     console.log('2');
     this._validateElement(false);
+
+    this.modelValue = value;
     this.modelChange.emit(value);
   }
 
