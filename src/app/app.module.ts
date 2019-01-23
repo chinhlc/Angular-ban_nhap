@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
@@ -31,6 +32,8 @@ import {SHARE_PROVIDERS} from './share-module/provider/provider-service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    // FormsModule,
+    // ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

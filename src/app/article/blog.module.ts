@@ -11,6 +11,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
 import {ChildElementModule} from '../share-module/provider';
+import {AllElementModule} from '../share-module/provider/custom-element/custom-el.module';
 // import {AlertModule} from '../share-module/notification/alert.module';
 
 
@@ -43,6 +44,7 @@ const BLOG_ROUTES: Routes = [
     RouterModule.forChild(BLOG_ROUTES),
     ChildElementModule,
     // AlertModule,
+    AllElementModule
   ],
   declarations: [BlogComponent, BlogCreateComponent, BlogListComponent, BlogDetailComponent]
 })

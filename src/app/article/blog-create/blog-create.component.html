@@ -5,6 +5,8 @@
 <app-elform [typeElem]="'password'" [placeHolderText]="'Current Password' | translate"
             [formKey]="'change-password'" [validation]="'required'"
             name="txtPass" ngModel></app-elform>
+<app-number-form></app-number-form>
+
 <div>
   <input placeholder="Name" type="text" (change)="txtName=$event.target.value;">
   <textarea rows="4" cols="35" placeholder="Messager" (change)="txtMess=$event.target.value;"></textarea>
