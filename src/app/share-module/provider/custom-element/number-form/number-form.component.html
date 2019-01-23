@@ -1,0 +1,44 @@
+<!-- <form [formGroup]="boundForm">
+  <input formControlName="bound">
+  <span *ngIf="boundForm.controls['bound'].errors?.validInteger && boundForm.controls['bound'].dirty">
+    Input must be an integer.
+  </span>
+</form> -->
+
+<div [formGroup]="numberForm">
+  <input type="number"
+  (blur)="handleBlur(numberForm.controls['number'].value)"
+  (focus)="handleFocus()"
+  class="pointer"
+  placeholder="Number Placeholder"
+  formControlName="number"
+  [ngClass]="{'error': numberForm.controls['number'].dirty && numberForm.controls['number'].errors,
+    'withEntry': withEntry === true,
+    'focus': focus === true
+    }">
+  <span [ngClass]="withEntry === true || focus === true ? 'show' : 'hide'">%</span>
+  <!-- <span [ngClass]="focus ? 'focus' : 'blur'">%</span> -->
+
+  <!-- begin error messages -->
+  <p class="error"
+    *ngIf="numberForm.controls['number'].dirty && numberForm.controls['number'].errors?.min || numberForm.controls['number'].errors?.max">
+    Invalid entry, value must be between -100 and 100.
+  </p>
+  <p class="error"
+    *ngIf="numberForm.controls['number'].dirty && numberForm.controls['number'].errors?.pattern">
+    Invalid entry, value must be an integer.
+  </p>
+  <!-- end error messages -->
+</div>
+
+<!--  'noEntry': !numberForm.controls['number'].value || !focus} -->
+<!-- <pre>{{ boundForm.controls['bound'].errors | json }}</pre> -->
+
+
+<!-- conditions:
+1) entry: null, focus: false  - placeholder | no border | no %
+2) entry: null, focus: true   - no placeholder | border | %
+3) entry: true, focus: false  - no placeholder (show entry) | no border | %
+4) entry: true, focuse: true  - no placeholder (show entry) | border | %
+edge cases:
+ -->
