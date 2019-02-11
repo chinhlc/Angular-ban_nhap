@@ -1,0 +1,5 @@
+<div [ngClass]="{'error-valid':!_validProperty['isValid']}">
+  <input name="date-select" type="date" [value]="getOutputTime()" (change)="changeValue($event.target.value)"
+         class="form-control form-border">
+</div>
+<span [hidden]="_validProperty['isValid']" class="error-message">{{_validProperty['mess']}}</span>

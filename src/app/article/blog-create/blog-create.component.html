@@ -2,6 +2,9 @@
   blog-create works!
 </p>
 
+<app-date-select [formKey]="'pos-product-detail'"[validation]="'require'"></app-date-select>
+<br>
+
 <app-elform [typeElem]="'password'" [placeHolderText]="'Current Password' | translate"
             [formKey]="'change-password'" [validation]="'required'"
             name="txtPass" ngModel></app-elform>
