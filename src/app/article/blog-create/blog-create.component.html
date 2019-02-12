@@ -8,6 +8,14 @@
 <app-time class="time-select" [formKey]="'pos-product-detail'" [validation]="'require'"> </app-time>
 <br>
 
+<app-select [elementData]="getOptionsSelectData()"
+            (modelChange)="changeValue($event)"
+            [disabled]="0"
+            [validation]="'require'"
+            [formKey]="'pos-product-detail'">
+</app-select>
+<br>
+
 <app-elform [typeElem]="'password'" [placeHolderText]="'Current Password' | translate"
             [formKey]="'change-password'" [validation]="'required'"
             name="txtPass" ngModel></app-elform>

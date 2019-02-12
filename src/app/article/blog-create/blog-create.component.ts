@@ -12,8 +12,8 @@ import {FormValidationService} from '../../share-module/provider/form/form-valid
 })
 export class BlogCreateComponent implements OnInit {
 
-  txtName: string = "";
-  txtMess: string = "";
+  txtName: string = '';
+  txtMess: string = '';
   isSave = false;
 
   constructor(
@@ -35,8 +35,27 @@ export class BlogCreateComponent implements OnInit {
 
     this.isSave = true;
     this.formValidate.submit('change-password', () => {
-      console.log("have validate");
+      console.log('have validate');
     }, true);
+  }
+
+  // Select
+  private _value_select = {};
+
+  changeValue(value: any): void {
+    this._value_select = value;
+  }
+
+  getOptionsSelectData() {
+     const data_select = {'data': [
+                                {'value': '', 'label': 'Choose an option', 'disabled': false, 'outOfStock': false},
+                                {'value': '49', 'label': 'Black', 'disabled': false, 'outOfStock': false},
+                                {'value': '52', 'label': 'Gray', 'disabled': false, 'outOfStock': false}
+                                ],
+                          'isMultiSelect': false,
+                          'isDisabled': false
+                        }
+    return data_select;
   }
 
 }
