@@ -5,6 +5,9 @@
 <app-date-select [formKey]="'pos-product-detail'"[validation]="'require'"></app-date-select>
 <br>
 
+<app-time class="time-select" [formKey]="'pos-product-detail'" [validation]="'require'"> </app-time>
+<br>
+
 <app-elform [typeElem]="'password'" [placeHolderText]="'Current Password' | translate"
             [formKey]="'change-password'" [validation]="'required'"
             name="txtPass" ngModel></app-elform>

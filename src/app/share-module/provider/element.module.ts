@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';   // Add ngClass, ngFor... for Chi
 
 import {ElementInputComponent} from './form/component/element-input.component';
 import {ElementDateComponent} from './form/component/date.component';
+import {ElementTimeComponent} from './form/component/time.component';
 
 import {FormValidationService} from './form/form-validation';
 
@@ -18,10 +19,12 @@ import {TranslateModule} from '@ngx-translate/core';
     TranslateModule,
     ElementInputComponent,
     ElementDateComponent,
+    ElementTimeComponent
   ],
   declarations: [
     ElementInputComponent,
-    ElementDateComponent
+    ElementDateComponent,
+    ElementTimeComponent
   ],
   providers: [
     FormValidationService,
