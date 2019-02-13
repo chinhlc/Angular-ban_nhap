@@ -54,7 +54,9 @@ export class BlogCreateComponent implements OnInit {
                                 ],
                           'isMultiSelect': false,
                           'isDisabled': false
-                        }
+                        };
+    console.log(JSON.stringify(data_select));
+
     return data_select;
   }
 
