@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Store} from '@ngrx/store';
 
 import {UserService} from '../share-module/dependency-injection/user.service';
 
@@ -9,9 +10,16 @@ import {UserService} from '../share-module/dependency-injection/user.service';
 })
 export class BlogComponent implements OnInit {
 
-  constructor(public userService: UserService) { }
+  data_use;
+
+  constructor(
+    public userService: UserService,
+    private store: Store<any>
+  ) { }
 
   ngOnInit() {
+    this.store.dispatch({ type: 'LOAD_CUSTOMERS' });
+    this.store.subscribe(state => (this.data_use = state.storeReduxCustomer.user));
   }
 
 }

@@ -14,6 +14,9 @@ import {ChildElementModule} from '../share-module/provider';
 import {AllElementModule} from '../share-module/provider/custom-element/custom-el.module';
 // import {AlertModule} from '../share-module/notification/alert.module';
 
+import {StoreModule} from '@ngrx/store';
+import {customerReducer} from '../redux/customer.reducer';
+
 
 const BLOG_ROUTES: Routes = [
   {
@@ -42,6 +45,7 @@ const BLOG_ROUTES: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(BLOG_ROUTES),
+    StoreModule.forFeature('storeReduxCustomer', customerReducer),
     ChildElementModule,
     // AlertModule,
     AllElementModule

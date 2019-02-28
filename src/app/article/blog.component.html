@@ -1,3 +1,11 @@
 <p>{{userService.data.textSlogan}}</p>
 <p> blog works! </p>
+
+<ul *ngFor="let customer of data_use">
+  <li>{{customer.name}}</li>
+  <li>{{customer.phone}}</li>
+  <li>{{customer.address}}</li>
+  <li>{{customer.membership}}</li>
+</ul>
+
 <router-outlet></router-outlet>

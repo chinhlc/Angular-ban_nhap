@@ -24,6 +24,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SHARE_PROVIDERS} from './share-module/provider/provider-service';
 
 
+import {StoreModule} from '@ngrx/store';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +51,7 @@ import {SHARE_PROVIDERS} from './share-module/provider/provider-service';
       preventDuplicates: true,
     }),
     RouterModule.forRoot(ROUTES,{preloadingStrategy: SelectivePreloadingStrategy}),
+    StoreModule.forRoot({}),
     XrouterModule,
     WrapRouterRoutingModule,
     SharedModule.forRoot(),
