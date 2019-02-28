@@ -25,6 +25,7 @@ import {SHARE_PROVIDERS} from './share-module/provider/provider-service';
 
 
 import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import {StoreModule} from '@ngrx/store';
     }),
     RouterModule.forRoot(ROUTES,{preloadingStrategy: SelectivePreloadingStrategy}),
     StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument(),
     XrouterModule,
     WrapRouterRoutingModule,
     SharedModule.forRoot(),
