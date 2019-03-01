@@ -26,6 +26,7 @@ import {SHARE_PROVIDERS} from './share-module/provider/provider-service';
 
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {EffectsModule} from '@ngrx/effects';
 
 
 @NgModule({
@@ -45,15 +46,22 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
         deps: [HttpClient]
       }
     }),
+
+    // Tùy chỉnh vị trí và thời gian của alert
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 10000,
       positionClass: 'toast-top-center',
       preventDuplicates: true,
     }),
+    // Preload cho mọi trang
     RouterModule.forRoot(ROUTES,{preloadingStrategy: SelectivePreloadingStrategy}),
+    // Store và effect cho cả app
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([]),
+    HttpClientModule,
+
     XrouterModule,
     WrapRouterRoutingModule,
     SharedModule.forRoot(),

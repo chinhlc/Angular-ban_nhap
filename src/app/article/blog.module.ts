@@ -15,7 +15,10 @@ import {AllElementModule} from '../share-module/provider/custom-element/custom-e
 // import {AlertModule} from '../share-module/notification/alert.module';
 
 import {StoreModule} from '@ngrx/store';
+import {EffectsModule} from '@ngrx/effects';
 import {customerReducer} from '../redux/customer.reducer';
+import {PeopleReducer} from '../redux/effect-redux/people.reducer';
+import {PeopleEffect} from '../redux/effect-redux/people.effects';
 
 
 const BLOG_ROUTES: Routes = [
@@ -46,6 +49,8 @@ const BLOG_ROUTES: Routes = [
     CommonModule,
     RouterModule.forChild(BLOG_ROUTES),
     StoreModule.forFeature('storeReduxCustomer', customerReducer),
+    StoreModule.forFeature('storeReduxPeople', PeopleReducer),
+    EffectsModule.forFeature([PeopleEffect]),
     ChildElementModule,
     // AlertModule,
     AllElementModule
