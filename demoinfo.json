@@ -1,0 +1,18 @@
+{
+  "json-people": [
+    {
+      "name": "Mary Land",
+      "phone": "8989789798789",
+      "address": "893 Main Voulevard",
+      "membership": "Pro",
+      "id": 2
+    },
+    {
+      "name": "John Peter",
+      "phone": "6464313212312",
+      "address": "123 Sun Street",
+      "membership": "Platinum",
+      "id": 1
+    }
+  ]
+}

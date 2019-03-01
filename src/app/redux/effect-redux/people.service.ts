@@ -9,7 +9,9 @@ import {PeopleState} from './people.state';
   providedIn: 'root'
 })
 export class PeopleService {
-  private PeopleStatesUrl = 'http://localhost:4500/json-people';    // Địa chỉ REST để Redux lấy Json
+
+  // Tạo địa chỉ REST để Redux lấy Json
+  private PeopleStatesUrl = 'http://localhost:4500/json-people';
 
   constructor(private http: HttpClient) {}
 
