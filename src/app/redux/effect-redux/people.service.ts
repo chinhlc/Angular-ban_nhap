@@ -15,6 +15,7 @@ export class PeopleService {
 
   constructor(private http: HttpClient) {}
 
+  // 5/7
   getPeopleStates(): Observable<PeopleState[]> {
     return this.http.get<PeopleState[]>(this.PeopleStatesUrl);
   }

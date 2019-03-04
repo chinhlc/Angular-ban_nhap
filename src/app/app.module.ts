@@ -60,7 +60,7 @@ import {EffectsModule} from '@ngrx/effects';
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([]),
-    HttpClientModule,
+    // HttpClientModule,
 
     XrouterModule,
     WrapRouterRoutingModule,

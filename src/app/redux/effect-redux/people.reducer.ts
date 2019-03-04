@@ -21,6 +21,7 @@ export const initialState: CustomerState = {
 
 export function PeopleReducer(state = initialState, action: PeopleActionRedux.Action): CustomerState {
   switch (action.type) {
+    // 3/7
     case PeopleActionRedux.PeopleActionTypes.LOAD_CUSTOMERS: {
       return {
         ...state,
@@ -36,6 +37,7 @@ export function PeopleReducer(state = initialState, action: PeopleActionRedux.Ac
         error: action.payload
       };
     }
+    // 7/7
     case PeopleActionRedux.PeopleActionTypes.LOAD_CUSTOMERS_SUCCESS: {
       return {
         ...state,
@@ -44,7 +46,7 @@ export function PeopleReducer(state = initialState, action: PeopleActionRedux.Ac
         customers: action.payload
       };
     }
-
+    // 0/7
     default: {
       return state;
     }

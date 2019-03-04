@@ -16,6 +16,7 @@ export class PeopleEffect {
 
   constructor(private actions$: Actions, private customerService: PeopleService ) {}
 
+  // 4/7
   @Effect() loadCustomers$: Observable<Action> = this.actions$.pipe(
                                                                       ofType<PeopleActionRedux.LoadPeoples>(
                                                                         PeopleActionRedux.PeopleActionTypes.LOAD_CUSTOMERS
