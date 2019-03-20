@@ -28,6 +28,8 @@ import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {EffectsModule} from '@ngrx/effects';
 
+// import './pages/home/javascripts/home.js';
+
 
 @NgModule({
   declarations: [

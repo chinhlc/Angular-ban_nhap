@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {UserService} from '../../share-module/dependency-injection/user.service';
 import {NumberHelper} from '../../share-module/helper/number-helper';
+import './javascripts/home.js';
 
 @Component({
   selector: 'app-home',
