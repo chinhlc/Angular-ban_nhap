@@ -24,7 +24,7 @@ export class BlogComponent implements OnInit {
     this.store.dispatch({ type: 'LOAD_CUSTOMERS' });
     this.store.subscribe(state => (this.data_use = state.storeReduxCustomer.user));
 
-
+    // 1/7
     this.store.dispatch(new PeopleActionRedux.LoadPeoples());
     this.store.subscribe(state => (this.data_people = state.storeReduxPeople.customers));
   }
